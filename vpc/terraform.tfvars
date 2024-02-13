@@ -1,0 +1,7 @@
+REGION        = "ap-northeast-2"
+PROJECT_NAME  = "metabank"
+VPC_CIDR      = "10.2.0.0/16"
+PUB_SUB1_CIDR = "10.2.101.0/24"
+PUB_SUB2_CIDR = "10.2.102.0/24"
+PRI_SUB3_CIDR = "10.2.1.0/24"
+PRI_SUB4_CIDR = "10.2.2.0/24"
