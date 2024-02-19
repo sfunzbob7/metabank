@@ -20,8 +20,8 @@ resource "aws_eks_cluster" "eks_cluster" {
     endpoint_private_access = true
     endpoint_public_access  = false
     subnet_ids = [
-      data.terraform_remote_state.metabank-eks2.outputs.PRI_SUB3_ID,
-      data.terraform_remote_state.metabank-eks2.outputs.PRI_SUB4_ID
+      data.terraform_remote_state.metabank-eks.outputs.PRI_SUB3_ID,
+      data.terraform_remote_state.metabank-eks.outputs.PRI_SUB4_ID
     ]
     security_group_ids = [data.terraform_remote_state.metabank-sg.outputs.eks-security]
   }
