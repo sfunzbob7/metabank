@@ -1,4 +1,3 @@
-# Jenkins Instance 생성
 resource "aws_instance" "bastion" {
   ami           = data.aws_ami.ubuntu.image_id
   instance_type = "t2.micro"
@@ -14,9 +13,10 @@ resource "aws_instance" "bastion" {
   }
 }
 
+# Jenkins Instance 생성
 resource "aws_instance" "jenkins" {
   ami           = data.aws_ami.ubuntu.image_id
-  instance_type = "t3.small"
+  instance_type = "t2.medium"
   key_name      = "metabank-key"
   vpc_security_group_ids = [
     data.terraform_remote_state.metabank-ec2-sg.outputs.web-security,

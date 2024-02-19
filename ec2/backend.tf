@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket = "metabank-terraform-status"
-    key    = "metabank/Terraform/ecr/terraform.tfstate"
+    key    = "metabank/Terraform/ec2/terraform.tfstate"
     region = "ap-northeast-2"
 
     dynamodb_table = "metabank-terraform-locks"
