@@ -15,12 +15,3 @@ data "terraform_remote_state" "metabank-node-vpc" {
     region = "ap-northeast-2"
   }
 }
-
-data "terraform_remote_state" "metabank-node-iam" {
-  backend = "s3"
-  config = {
-    bucket = "metabank-terraform-status"
-    key    = "metabank/Terraform/iam/terraform.tfstate"
-    region = "ap-northeast-2"
-  }
-}

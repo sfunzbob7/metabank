@@ -21,13 +21,13 @@ resource "aws_eks_node_group" "eks_node" {
   # Configuration block
   scaling_config {
     # Required number of worker nodes
-    desired_size = 1
+    desired_size = 2
 
     # Maximum number of worker nodes
-    max_size = 3
+    max_size = 5
 
     # Minimum number of worker nodes
-    min_size = 1
+    min_size = 2
   }
 
   update_config {
@@ -43,7 +43,7 @@ resource "aws_eks_node_group" "eks_node" {
   capacity_type = "ON_DEMAND"
 
   # Disk size in GB for worker nodes
-  disk_size = 20
+  disk_size = 40
 
   depends_on = [
     aws_iam_role_policy_attachment.eks-AmazonEKSWorkerNodePolicy,
@@ -55,7 +55,7 @@ resource "aws_eks_node_group" "eks_node" {
   force_update_version = false
 
   # Instance type associated with the EKS Node Group
-  instance_types = ["t3.small"]
+  instance_types = ["t2.large"]
 
   # Kubernetes version
   version = "1.27"
